@@ -203,9 +203,12 @@ searchButton.addEventListener("click", function () {
           .toLowerCase()
           .includes(searchInputField.value.toLowerCase())
       );
-      localStorage.setItem("searchedProducts", JSON.stringify(filteredArray));
-      console.log(filteredArray);
-      location.assign("filtered.html");
+      if (filteredArray.length === 0) {
+        alert("We can't find that Product! Try again");
+      } else {
+        localStorage.setItem("searchedProducts", JSON.stringify(filteredArray));
+        searchButton.setAttribute("href", "./filtered.html");
+      }
     })
     .catch((err) => console.log(err));
 });

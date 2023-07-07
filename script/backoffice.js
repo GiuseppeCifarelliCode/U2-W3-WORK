@@ -26,7 +26,7 @@ if (productId) {
 }
 
 if (productId) {
-  modifyButton = document.querySelector(".btn-primary");
+  modifyButton = document.querySelector(".save-button");
   modifyButton.innerText = "Save Changes";
   modifyButton.classList.add("btn-warning");
   document.querySelector(".btn-danger").classList.remove("d-none");
